@@ -1,16 +1,26 @@
 ---
+import PlotFigure from "../components/PlotFigure.astro";
+import * as Plot from "@observablehq/plot";
+import penguins from "../assets/penguins.json";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TP1 : Astro + Observable Plot</title>
+  </head>
+  <body>
+    <h1>Penguins</h1>
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(penguins, {
+            x: "culmen_length_mm",
+            y: "culmen_depth_mm",
+            stroke: "species",
+          }),
+        ],
+      }}
+    />
+  </body>
 </html>
