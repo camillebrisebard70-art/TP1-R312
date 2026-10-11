@@ -22,5 +22,17 @@ import penguins from "../assets/penguins.json";
         ],
       }}
     />
+	    <h1>Répartition des masses</h1>
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.rectY(
+            penguins,
+            Plot.binX({ y: "count" }, { x: "body_mass_g" })
+          ),
+          Plot.ruleY([0]),
+        ],
+      }}
+    />
   </body>
 </html>
