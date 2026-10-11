@@ -1,0 +1,80 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1f2937;
+      }
+      body {
+        margin: 0;
+        background: #f3f4f6;
+      }
+      header {
+        background: #111827;
+        color: white;
+        padding: 2.5rem 1.5rem 1.5rem;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2rem;
+      }
+      header p {
+        margin: 0 0 1.5rem;
+        color: #9ca3af;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      nav a {
+        color: #d1d5db;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: white;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      }
+      .card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+      }
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.1rem;
+        color: #374151;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{title}</h1>
+      <p>TP1 : usage de Plot côté serveur avec PlotFigure</p>
+      <nav>
+        <a href="/">Penguins</a>
+        <a href="/pizza">Pizzas</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

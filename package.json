@@ -13,8 +13,12 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^8.2.9",
+    "@netlify/blobs": "^11.1.4",
     "@observablehq/plot": "^0.6.17",
     "astro": "^7.3.8",
     "jsdom": "^30.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5"
   }
 }

@@ -1,17 +1,13 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import PlotFigure from "../components/PlotFigure.astro";
 import * as Plot from "@observablehq/plot";
 import penguins from "../assets/penguins.json";
 ---
 
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>TP1 : Astro + Observable Plot</title>
-  </head>
-  <body>
-	<main>
-     <h1>Penguins</h1>
+<Layout title="Manchots d'Observable Plot">
+  <div class="card">
+    <h2>Morphologie du bec</h2>
     <PlotFigure
       options={{
         title: "Longueur et profondeur du bec des manchots",
@@ -27,18 +23,18 @@ import penguins from "../assets/penguins.json";
         ],
       }}
     />
-	    <h1>Répartition des masses</h1>
+  </div>
+
+  <div class="card">
+    <h2>Répartition des masses</h2>
     <PlotFigure
       options={{
+        title: "Distribution de la masse corporelle",
         marks: [
-          Plot.rectY(
-            penguins,
-            Plot.binX({ y: "count" }, { x: "body_mass_g" })
-          ),
+          Plot.rectY(penguins, Plot.binX({ y: "count" }, { x: "body_mass_g" })),
           Plot.ruleY([0]),
         ],
       }}
     />
-	</main>
-  </body>
-</html>
+  </div>
+</Layout>
