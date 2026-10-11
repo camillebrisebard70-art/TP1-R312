@@ -10,9 +10,14 @@ import penguins from "../assets/penguins.json";
     <title>TP1 : Astro + Observable Plot</title>
   </head>
   <body>
-    <h1>Penguins</h1>
+	<main>
+     <h1>Penguins</h1>
     <PlotFigure
       options={{
+        title: "Longueur et profondeur du bec des manchots",
+        subtitle: "Par espèce : Adelie, Chinstrap, Gentoo",
+        caption: "Figure 1. Nuage de points culmen_length_mm vs culmen_depth_mm.",
+        ariaLabel: "Nuage de points comparant la longueur et la profondeur du bec de trois espèces de manchots",
         marks: [
           Plot.dot(penguins, {
             x: "culmen_length_mm",
@@ -34,5 +39,6 @@ import penguins from "../assets/penguins.json";
         ],
       }}
     />
+	</main>
   </body>
 </html>
